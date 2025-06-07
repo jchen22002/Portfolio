@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import { useState} from "react"
+import { useState} from "react";
 
 const Header = () => {
   // Toggle Menu open/close
@@ -12,7 +12,7 @@ const Header = () => {
 
       <div className='container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20'>
 
-        {/* Logo/Name */}
+        {/* Logo + Name */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -26,11 +26,34 @@ const Header = () => {
           className='flex items-center'
         >
           
-          <div className='h-10 w-10 rounded-xl bg-gradient-to-r from-gray-500 to-gray-100 flex items-center justify-center text-purple-600 font-bold text-xl mr-3'>
-            JC
+          <div className="w-10 h-10 flex items-center justify-center hover:animate-spin-slow transition-transform duration-700">
+            <svg viewBox="0 0 841.9 595.3" className="w-full h-full text-blue-500">
+              <g>
+                <g stroke="currentColor" strokeWidth="30" fill="none">
+                  <ellipse rx="165" ry="380" cx="420.9" cy="296.5" transform="rotate(0 420.9 296.5)" />
+                  <ellipse rx="165" ry="380" cx="420.9" cy="296.5" transform="rotate(60 420.9 296.5)" />
+                  <ellipse rx="165" ry="380" cx="420.9" cy="296.5" transform="rotate(120 420.9 296.5)" />
+                </g>
+
+                <circle cx="420.9" cy="296.5" r="50" fill="currentColor" />
+
+                <text
+                  x="420.9"
+                  y="310"
+                  textAnchor="middle"
+                  fill="black"
+                  fontSize="200"
+                  fontWeight="bold"
+                  fontFamily="Arial, sans-serif"
+                  dominantBaseline="middle"
+                >
+                  JC
+                </text>
+              </g>
+            </svg>
           </div>
 
-          <span className='text-xl font-bold bg-gradient-to-r from-gray-500 to-gray-100 bg-clip-text text-transparent'>
+          <span className='text-l font-bold'>
             Portfolio
           </span>
 
@@ -39,7 +62,6 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="lg:flex hidden space-x-8">
           {["Home", "About", "Projects", "Experience", "Contact"].map((item, index) => (
-
             <motion.a 
               key={item}
               initial={{ opacity: 0, y: -20 }}
@@ -50,20 +72,22 @@ const Header = () => {
                 damping: 20,
                 delay: 0.7 + index * 0.2,
               }}  
-              className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400 font-medium transition-colors duration-300 group"
+              className="relative text-black-800 dark:text-black-200 hover:blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300 group"
               href="#">
               {item}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 rounded group-hover:w-full transition-all duration-300 origin-left"></span>
+
             </motion.a>
 
           ))}
         </nav>
+
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
           <motion.button 
             whileTap={{ scale: 0.7 }}
             onClick={toggleMenu}
-            className="text-gray-300"
+            className="text-black-300"
           >
             { isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
           </motion.button>
@@ -71,7 +95,28 @@ const Header = () => {
 
       </div>
 
-      
+      {/* Mobile Menu */}
+      <motion.div 
+        initial={{ opacity: 0, height: 0 }}
+        animate={{
+          opacity: isOpen ? 1 : 0,
+          height: isOpen ? "auto" : 0,
+        }}
+        transition={{ duration: 0.5 }}
+        className="md:hidden overflow-hidden bg-white dark:bg-black-900 shadow-lg px-4 py-5 space-y-5"
+      >
+        <nav className="flex flex-col space-y-3">
+          {["Home", "About", "Projects", "Experience", "Contact"].map((item) => (
+            <a 
+              onClick={toggleMenu} 
+              className="text-black-300 font-medium py-2" 
+              key={item} href=""
+            >
+              {item}
+            </a>
+          ))}
+        </nav>
+      </motion.div>
 
     </header>
   )
