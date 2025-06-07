@@ -9,7 +9,6 @@ const Header = () => {
 
   return (
     <header className='absolute w-full z-50 transition-all duration-300'>
-
       <div className='container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20'>
 
         {/* Logo + Name */}
@@ -53,13 +52,13 @@ const Header = () => {
             </svg>
           </div>
 
-          <span className='text-l font-bold'>
+          <span className='text-lg font-bold'>
             Portfolio
           </span>
 
         </motion.div>
         
-        {/* Desktop Navigation */}
+        {/* Navigation Items */}
         <nav className="lg:flex hidden space-x-8">
           {["Home", "About", "Projects", "Experience", "Contact"].map((item, index) => (
             <motion.a 
@@ -72,22 +71,20 @@ const Header = () => {
                 damping: 20,
                 delay: 0.7 + index * 0.2,
               }}  
-              className="relative text-black-800 dark:text-black-200 hover:blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300 group"
+              className="relative text-black hover:text-blue-600 font-bold transition-colors duration-300 group"
               href="#">
               {item}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 rounded group-hover:w-full transition-all duration-300 origin-left"></span>
-
             </motion.a>
-
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Hamburger Button */}
         <div className="md:hidden flex items-center">
           <motion.button 
             whileTap={{ scale: 0.7 }}
             onClick={toggleMenu}
-            className="text-black-300"
+            className="text-black"
           >
             { isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
           </motion.button>
@@ -95,7 +92,7 @@ const Header = () => {
 
       </div>
 
-      {/* Mobile Menu */}
+      {/* Hamburger Nav */}
       <motion.div 
         initial={{ opacity: 0, height: 0 }}
         animate={{
@@ -103,14 +100,14 @@ const Header = () => {
           height: isOpen ? "auto" : 0,
         }}
         transition={{ duration: 0.5 }}
-        className="md:hidden overflow-hidden bg-white dark:bg-black-900 shadow-lg px-4 py-5 space-y-5"
+        className="md:hidden overflow-hidden bg-white shadow-lg px-4 py-5 space-y-5"
       >
         <nav className="flex flex-col space-y-3">
           {["Home", "About", "Projects", "Experience", "Contact"].map((item) => (
             <a 
               onClick={toggleMenu} 
-              className="text-black-300 font-medium py-2" 
-              key={item} href=""
+              className="text-black font-bold py-2" 
+              key={item} href="#"
             >
               {item}
             </a>
