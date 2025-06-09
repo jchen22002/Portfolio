@@ -9,14 +9,14 @@ const Home = () => {
   return (
     <motion.section
       id="profile"
-      className="flex justify-center gap-20 h-[80vh]"
+      className="flex justify-center gap-20 h-[80vh] item-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       {/* Profile Picture */}
       <motion.div
-        className="flex h-[350px] w-[350px] my-auto"
+        className="flex"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3, duration: 0.8, type: "spring", stiffness: 80 }}
@@ -38,13 +38,13 @@ const Home = () => {
         {/* Buttons */}
         <div className="flex justify-center gap-4">
           <button
-            className="font-semibold transition-all duration-300 p-4 w-40 rounded-full border border-gray-600 bg-transparent hover:border-white hover:bg-neutral-800 hover:text-white"
+            className="font-semibold transition-all duration-300 p-4 w-45 rounded-full border border-gray-600 bg-transparent hover:border-white hover:bg-neutral-800 hover:text-white"
             onClick={() => window.open(resumePDF)}
           >
             Download CV
           </button>
           <button
-            className="font-semibold transition-all duration-300 p-4 w-40 rounded-full border border-gray-600 bg-neutral-800 text-white hover:bg-black"
+            className="font-semibold transition-all duration-300 p-4 w-45 rounded-full border border-gray-600 bg-neutral-800 text-white hover:bg-black"
             onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
           >
             Contact Info
