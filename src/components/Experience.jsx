@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
-    <section id="experience" className="pt-25 md:pt-4 relative">
+    <section id="experience" className="pt-25 md:pt-5 relative ">
       <p className="text-center">Explore My</p>
       <h1 className="text-[3rem] text-center font-semibold">Experience</h1>
 
