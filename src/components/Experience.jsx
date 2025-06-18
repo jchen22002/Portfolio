@@ -9,7 +9,7 @@ const Experience = () => {
       <div className="flex justify-center flex-col">
         <div className="flex gap-8 mb-40 flex-col md:flex-row about-containers">
 
-          {/* Work History Card */}
+          {/* Work History */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -41,7 +41,7 @@ const Experience = () => {
             </div>
           </motion.div>
 
-          {/* Skills Card */}
+          {/* Skills */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
