@@ -15,7 +15,7 @@ const About = () => {
 
       {/* Container Wrapper */}
       <div className="flex flex-col justify-center">
-        <div className="flex gap-8 mb-40 flex-col md:flex-row about-containers">
+        <div className="flex gap-8 flex-col md:flex-row about-containers">
 
           {/* Background & Interests Containter */}
           <motion.div

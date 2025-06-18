@@ -7,7 +7,7 @@ const Experience = () => {
       <h1 className="text-[3rem] text-center font-semibold">Experience</h1>
 
       <div className="flex justify-center flex-col">
-        <div className="flex gap-8 mb-40 flex-col md:flex-row about-containers">
+        <div className="flex gap-8 flex-col md:flex-row about-containers">
 
           {/* Work History */}
           <motion.div
