@@ -31,7 +31,7 @@ const Home = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5, duration: 0.8, type: "spring", stiffness: 80 }}
       >
-        <p className="font-semibold">Hey there! My name's</p>
+        <p className="font-semibold">Hey there! My name is</p>
         <h1 className="text-[3rem] text-center">Johnson Chen</h1>
         <p className="font-semibold text-2xl mb-4">[Software Developer]</p>
 
