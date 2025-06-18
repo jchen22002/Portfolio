@@ -36,3 +36,55 @@ section {
 .section-container {
   display: flex;
 }
+
+@media screen and (max-width: 768px) {
+  .color-container {
+    flex-basis: 100%; 
+    max-width: 100%;   
+    margin: 0.5rem 0;  
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #experience{
+    margin-top: 2rem;
+  }
+  #profile {
+    display: block;
+  }
+  section {
+    height: fit-content;
+  }
+  section {
+    margin: 0 15%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contact {
+    height: 40vh;
+  }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .color-container {
+    flex-basis: 100%;  
+    max-width: 100%;   
+    margin: 0.5rem 0;  
+  }
+}

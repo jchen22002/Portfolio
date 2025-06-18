@@ -31,7 +31,7 @@ const Contact = () => {
         viewport={{ once: true }}
       >
         <motion.div
-          className="flex items-center justify-center gap-2 m-4"
+          className="flex items-center justify-center"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
